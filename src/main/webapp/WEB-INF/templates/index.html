@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Test Web-App: Maven Spring Thymeleaf</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+	<div>
+		<h1 th:text="#{webapp.title}">webapp title</h1>
+	</div>
+	
+	<div>
+		<h2 th:text="#{webapp.people}">people</h2>
+		
+		<table>
+			<thead>
+				<tr>
+					<th th:text="#{webapp.people.name}">name</th>
+					<th th:text="#{webapp.people.age}">age</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="person : ${people}">
+					<td th:text="${person.name}">name 1</td>
+					<td th:text="${person.age}">age 1</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div>
+		<h2 th:text="#{webapp.cities}">cities</h2>
+		
+		<table>
+			<thead>
+				<tr>
+					<th th:text="#{webapp.cities.name}">name</th>
+					<th th:text="#{webapp.cities.population}">population</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="city : ${cities}">
+					<td th:text="${city.name}">name 1</td>
+					<td th:text="${city.population}">population 1</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
